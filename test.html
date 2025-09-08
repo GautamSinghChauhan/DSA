@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Fields</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h3 class="text-center">Add Input Fields Dynamically</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div id="input-container" class="mb-3">
+                <!-- Dynamic input fields will appear here -->
+            </div>
+            <button id="addInputBtn" class="btn btn-primary w-100">Add Input Field</button>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let inputCount = 0; // Counter for input fields
+
+    document.getElementById('addInputBtn').addEventListener('click', function () {
+        inputCount++; // Increment counter
+
+        // Create a new input group
+        const inputGroup = document.createElement('div');
+        inputGroup.className = 'input-group mb-3';
+
+        // Create the input element
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'form-control';
+        input.id = `input-${inputCount}`;
+        input.placeholder = `Input field ${inputCount}`;
+
+        // Create the delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'btn btn-danger';
+        deleteButton.type = 'button';
+        deleteButton.innerHTML = 'Remove';
+        deleteButton.addEventListener('click', function () {
+            inputGroup.remove(); // Remove the input group
+        });
+
+        // Append input and button to the input group
+        inputGroup.appendChild(input);
+        inputGroup.appendChild(deleteButton);
+
+        // Add the input group to the container
+        document.getElementById('input-container').appendChild(inputGroup);
+    });
+</script>
+</body>
+</html>

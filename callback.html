@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callback Function in JavaScript</h1>
+  </body>
+
+  <script>// Function that performs an addition and then calls the callback with the result
+    function addNumbers(a, b, callback) {
+        console.log("Starting addition operation Gautam ...");
+    
+        // Simulate a delay using setTimeout
+        setTimeout(() => {
+            const result = a + b;
+            console.log("Addition completed. Singh");
+    
+            // Execute the callback function with the result
+            callback(result);
+        }, 1000); // 1-second delay
+    }
+    
+    // Function to be used as a callback to handle the result
+    function handleResult(result) {
+        console.log("The result of the addition is: " + result);
+    }
+    
+    // Call the addNumbers function and pass handleResult as the callback
+    addNumbers(5, 10, handleResult);
+    
+  </script>
+  <script>
+    const str ='Hello World';
+    const result = str.includes('World');
+    console.log(result);
+  </script>
+
+  <script>
+    const arr =[2,3,4,5,6,3,4,5,78,2,3,5,6]
+
+
+    const unique =[];
+    
+
+  </script>
+</html>

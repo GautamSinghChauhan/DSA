@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       
+class name{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    getdetails(){
+        console.log(this.name);
+        console.log(this.age);
+    }
+}
+
+const obj = new name("Gautam",22);
+obj.getdetails();
+
+const newobj ={
+    name : "Priyanka",
+    age : 22,
+    getdetails(){
+        console.log(this.name);
+        console.log(this.age);
+    }
+}
+function myprotoname(name){
+    this.name = name;
+}
+myprotoname.prototype = newobj;
+
+const obj2 = new myprotoname("Gautam");
+console.log(obj2);
+console.log(obj2.getdetails());
+    </script>
+    
+</body>
+</html>
